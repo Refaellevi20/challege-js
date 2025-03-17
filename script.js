@@ -108,3 +108,58 @@ function findPalindromes(arr) {
 }
 
 console.log(findPalindromes([121, 234, 909, 456, 787, 1001, 99, 12]));
+
+//! Reverse an array without using .reverse() method.
+
+function reverseArray(arr) {
+    let left = 0, right = arr.length - 1;
+    while (left < right) {
+        
+        [arr[left], arr[right]] = [arr[right], arr[left]];
+        left++;
+        right--;
+    }
+    return arr;
+}
+
+console.log(reverseArray([1, 2, 3, 4, 5]))
+
+//! 11. Find the sum of all numbers in an array.
+
+function findSum(arr) {
+ return arr.reduce((acc,curr) => acc + curr ,0)
+}
+
+console.log(findSum([1, 2, 3, 4, 5]));
+
+//! 12. Find the maximum value in an array.
+
+function findMax(arr) {
+    return arr.reduce((max,curr) => max > curr ? max : curr,0)
+}
+
+console.log(findMax([1, 2, 6, 4, 5]));
+
+//! 13. Find the minimum value in an array.
+
+function findMin(arr) {
+    return arr.reduce((min,curr) => min < curr ? min : curr,Infinity)
+}
+
+console.log(findMin([7, 2, 6, 4, 5]));
+
+//! 14. Check if a number is present in an array.
+
+function isNumberPresent(arr, num) {
+    return arr.includes(num);
+}
+
+console.log(isNumberPresent([7, '3', 6, 4, 5], 6));
+
+//! 15. Find the average of all numbers in an array.
+
+function averageArray(arr) {
+    return arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
+}
+
+console.log(averageArray([1, 2, 3]));
